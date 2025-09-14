@@ -26,3 +26,12 @@ variable "subscription_id" {
   description = "Azure Subscription ID"
 }
 
+variable "sql_admin_login" {
+  type        = string
+  description = "Admin login for SQL Server"
+}
+variable "sql_admin_password" {
+  type        = string
+  description = "Admin password for SQL Server"
+  sensitive   = true
+}

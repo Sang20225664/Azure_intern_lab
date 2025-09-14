@@ -7,3 +7,6 @@ default_tags = {
   Region      = "Southeast Asia"
 }
 subscription_id = "82be7cee-49b9-4786-802a-2df9b3937382"
+
+sql_admin_login    = "SangNDT1"
+sql_admin_password = "Sang29102004"
