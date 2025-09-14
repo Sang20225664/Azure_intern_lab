@@ -3,6 +3,7 @@ module "rg" {
   rg_name      = var.rg_name
   location     = var.location
   default_tags = var.default_tags
+
 }
 
 module "network" {
@@ -13,6 +14,8 @@ module "network" {
   rg_name      = var.rg_name
   vnet_cidr    = var.vnet_cidr
   default_tags = var.default_tags
+
+  depends_on = [module.rg]
 }
 
 module "storage" {
@@ -22,6 +25,9 @@ module "storage" {
   location     = var.location
   rg_name      = var.rg_name
   default_tags = var.default_tags
+
+  depends_on = [module.rg]
+
 }
 
 module "sql_database" {
@@ -33,4 +39,6 @@ module "sql_database" {
   default_tags       = var.default_tags
   sql_admin_login    = var.sql_admin_login
   sql_admin_password = var.sql_admin_password
+
+  depends_on = [module.rg]
 }
