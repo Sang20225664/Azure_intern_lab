@@ -35,3 +35,8 @@ variable "sql_admin_password" {
   description = "Admin password for SQL Server"
   sensitive   = true
 }
+
+variable "keyvault_secret_name" {
+  type    = string
+  default = "sql-connection"
+}
